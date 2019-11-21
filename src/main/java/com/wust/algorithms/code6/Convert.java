@@ -9,33 +9,29 @@ public class Convert {
 
     public static String convert(String s, int numRows) {
 
+        if (numRows == 1) {
+            return s;
+        }
+
         StringBuilder sb = new StringBuilder();
+        int jiange = (2*numRows-2);
 
         int i = 0;
         while (i < numRows){
 
-            int cishu = 0;
-            int fubiao = (2*numRows-2);
-            for (int j = i; j < s.length(); j = j + fubiao){
-
-                sb.append(s.charAt(j));
-
-                if(i != 0 || i != (numRows -1)){
-
-                    if(cishu == 1){
-                        fubiao = (2*numRows-2) - 2*i;
-                        cishu = 0;
-                    }else {
-                        fubiao = (2*numRows-2) + j + i;
-                        cishu = 1;
-                    }
+            //第一行 和最后一行
+            for (int j = i; j < s.length(); j++) {
+                if ((i == 0 || i == (numRows - 1)) && (j % jiange) == i) {
+                    sb.append(s.charAt(j));
+                } else if ((j % jiange) == i || (j % jiange) == (jiange - i)) {
+                    //中间行
+                    sb.append(s.charAt(j));
                 }
             }
             i++;
         }
 
         return sb.toString();
-
     }
 
     public static void main(String[] args) {
