@@ -1,5 +1,7 @@
 package com.wust.factory.simpleFactory;
 
+import com.wust.factory.common.DrinksOperation;
+
 /**
  * @author wxl
  * @date 2019/12/17
@@ -19,10 +21,10 @@ public class TestEasyFactory {
 
     public static void main(String[] args) {
 
-        Drinks cola = DrinksEasyFactory.createOperation(DrinksEasyFactory.COLA);
+        DrinksOperation cola = DrinksEasyFactory.createOperation(DrinksEasyFactory.COLA);
         cola.makeDrinks();
 
-        Drinks sprite = DrinksEasyFactory.createOperation(DrinksEasyFactory.SPRITE);
+        DrinksOperation sprite = DrinksEasyFactory.createOperation(DrinksEasyFactory.SPRITE);
         sprite.makeDrinks();
     }
 }
