@@ -14,17 +14,17 @@ import com.wust.factory.common.DrinksOperation;
  *
  * 缺点：
  *      当需要制作其余的饮料时(比如橙汁) 则需要在增加 Drinks实现类 OrangeJuiceDrinksImpl 的基础上，
- *      修改工厂类 DrinksEasyFactory 的 createOperation 方法，违反了开-闭原则。
+ *      修改工厂类 EasyFactory 的 createOperation 方法，违反了开-闭原则。
  *
  */
 public class TestEasyFactory {
 
     public static void main(String[] args) {
 
-        DrinksOperation cola = DrinksEasyFactory.createOperation(DrinksEasyFactory.COLA);
+        DrinksOperation cola = EasyFactory.createDrinksOperation(EasyFactory.COLA);
         cola.makeDrinks();
 
-        DrinksOperation sprite = DrinksEasyFactory.createOperation(DrinksEasyFactory.SPRITE);
+        DrinksOperation sprite = EasyFactory.createDrinksOperation(EasyFactory.SPRITE);
         sprite.makeDrinks();
     }
 }
