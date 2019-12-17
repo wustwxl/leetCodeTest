@@ -15,18 +15,18 @@ import com.wust.factory.common.DrinksOperation;
  *      当需要制作橙汁的时候 满足开闭原则，只需要新增橙汁相关工厂实现类及其具体操作类即可
  *
  * 缺点：
- *      增加产品时 增加了额外开发量
+ *      当公司产品族增多，工厂不再是仅生产饮料雪碧橙汁等饮料，而且还需要生产面包蛋糕等食品时，此时
  */
 public class TestFactoryMode {
 
     public static void main(String[] args) {
 
-        DrinksFactory colaDrinksFactory = new ColaDrinksFactoryImpl();
-        DrinksOperation colaOperation = colaDrinksFactory.createOperation();
+        FactoryModeFactory colaDrinksFactory = new ColaDrinksFactoryImpl();
+        DrinksOperation colaOperation = colaDrinksFactory.createDrinksOperation();
         colaOperation.makeDrinks();
 
-        DrinksFactory spriteDrinksFactory = new SpriteDrinksFactoryImpl();
-        DrinksOperation spriteOperation = spriteDrinksFactory.createOperation();
+        FactoryModeFactory spriteDrinksFactory = new SpriteDrinksFactoryImpl();
+        DrinksOperation spriteOperation = spriteDrinksFactory.createDrinksOperation();
         spriteOperation.makeDrinks();
 
     }

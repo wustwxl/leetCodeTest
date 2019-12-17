@@ -8,10 +8,10 @@ import com.wust.factory.common.DrinksOperation;
  * @date 2019/12/17
  * @description  工厂模式 - 定义具体工厂实现类
  */
-public class ColaDrinksFactoryImpl implements DrinksFactory {
+public class ColaDrinksFactoryImpl implements FactoryModeFactory {
 
     @Override
-    public DrinksOperation createOperation() {
+    public DrinksOperation createDrinksOperation() {
         return new ColaDrinksOperationImpl();
     }
 
