@@ -13,8 +13,6 @@ public enum EnumSingleton implements Serializable {
 
     INSTANCE;
 
-    //doSomething 该实例支持的行为
-
     /*
      * @author wxl
      * @date 2019/12/18
